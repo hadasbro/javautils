@@ -45,9 +45,10 @@ Code has been splitted for some subclasses as below.
 1. CollectionUtils - methods usefult for handling collections
 
 	a) CollectionUtils::collGroupper - group collection of objects by object's method value / by property
-
-		// signature
-		// collGroupper<T extends EntityTag, S> Map<S, Set<T>> collGroupper(Collection<T> collection,Collector<? super T, ?, Map<S,Set<T>>> collector)
+	
+	signature:
+	*CollectionUtils::collGroupper<T extends EntityTag, S> Map<S, Set<T>> collGroupper(Collection<T> collection,Collector<? super T, ?, Map<S,Set<T>>> collector)*
+	
 		
         Map<String, Set<Game>> grouppedByCategory = CollectionUtils.collGroupper(
                 gamesCollection,
@@ -59,12 +60,14 @@ Code has been splitted for some subclasses as below.
         // category 2=[Game{name='Game 2', gameTag='game2', category='category 2'}],
         // category 1=[Game{name='Game 1', gameTag='game1', category='category 1'},
         // Game{name='Game 3', gameTag='game3', category='category 1'}]}
-		
-	a) CollectionUtils::collGroupperFlatter - group collection of objects by object's method value / by property and flat to object value / property 
 	
-		// signature
-		// <T extends EntityTag, S, R> Map<S, Set<R>> collGroupperFlatter(Collection<T> collection, Function<T,S> objMethodKey, Function<T,R> objMethodValue)
 
+	
+	b) CollectionUtils::collGroupperFlatter - group collection of objects by object's method value / by property and flat to object value / property 
+	
+	signature:
+	*CollectionUtils::<T extends EntityTag, S, R> Map<S, Set<R>> collGroupperFlatter(Collection<T> collection, Function<T,S> objMethodKey, Function<T,R> objMethodValue)*
+	
 		
         Map<String, Set<String>> gameNameByCategory = CollectionUtils.collGroupperFlatter(
                 gamesCollection,
