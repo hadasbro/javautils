@@ -44,10 +44,10 @@ Code has been splitted for some subclasses as below.
 		
 1. CollectionUtils - methods usefult for handling collections
 
-	a) CollectionUtils::collGroupper<T extends EntityTag, S> Map<S, Set<T>> collGroupper(Collection<T> collection,Collector<? super T, ?, Map<S,Set<T>>> collector)
-.
+	a) CollectionUtils::collGroupper - group collection of objects by object's method value / by property
 
-		// group collection of objects by object's method value / by property
+		// signature
+		// collGroupper<T extends EntityTag, S> Map<S, Set<T>> collGroupper(Collection<T> collection,Collector<? super T, ?, Map<S,Set<T>>> collector)
 		
         Map<String, Set<Game>> grouppedByCategory = CollectionUtils.collGroupper(
                 gamesCollection,
@@ -60,10 +60,11 @@ Code has been splitted for some subclasses as below.
         // category 1=[Game{name='Game 1', gameTag='game1', category='category 1'},
         // Game{name='Game 3', gameTag='game3', category='category 1'}]}
 		
-	a) <T extends EntityTag, S, R> Map<S, Set<R>> collGroupperFlatter(Collection<T> collection, Function<T,S> objMethodKey, Function<T,R> objMethodValue)
-.
+	a) CollectionUtils::collGroupperFlatter - group collection of objects by object's method value / by property and flat to object value / property 
+	
+		// signature
+		// <T extends EntityTag, S, R> Map<S, Set<R>> collGroupperFlatter(Collection<T> collection, Function<T,S> objMethodKey, Function<T,R> objMethodValue)
 
-		// group collection of objects by object's method value / by property and flat to object value / property
 		
         Map<String, Set<String>> gameNameByCategory = CollectionUtils.collGroupperFlatter(
                 gamesCollection,
@@ -75,6 +76,6 @@ Code has been splitted for some subclasses as below.
 		
 		
 2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if youï¿½d like to and then click **Clone**.
+4. Open the directory you just created to see your repositoryï¿½s files.
 
