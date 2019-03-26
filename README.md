@@ -347,8 +347,51 @@ Code has been splitted for some subclasses as below.
         int rand1 = Utils.rand(0, 100); // random number from 0 to 100
         int rand2 = Utils.rand(115, 200); // random number from 115 to 200
         
+    Utils::getRandString
+        
+        String randString = Utils.getRandString(32);
+        // random string 32 characters (e.g. ppS4NlSGnSTo7HuwPkvIV14HOBUPKdXh)
+        
     Utils::arrayInclude
     
         String strings[] = {"abc", "def", "ghi"};
         Utils.arrayInclude(strings, "def"); // true
         Utils.arrayInclude(strings, "defghi"); // false
+        
+5. **Object stringifer** - var_dump / object printer.
+
+    Interface
+    
+        interface Printeable {
+            default String stringify() {
+                return ToStringBuilder.reflectionToString(this, new ObjectStringifer.PrintToStringStyle());
+            }
+        
+            default String deepStringify() {
+                return (new ObjectStringifer.DeepObjectPrinter()).toString(this);
+            }
+        }
+        
+    **Usage:** Implement this interface if you want your object/class to be stringifeable.
+    
+    Example: 
+    
+        public class Game implements Printeable {} 
+        
+        Game game = new Game("Game 1", "game1", "category 1");
+        
+        String gameStr1 = gameB.stringify();
+        // [name=Game 1,gameTag=game1,category=category 1]
+
+        String gameStr2 =  game.deepStringify());
+        // org.bitbucket.javautils.test.classes.Game[name=Game 1,gameTag=game1,category=category 1][]
+
+6. Classes used in examples above
+    
+    see source code, package test.classes
+    
+    
+## See more
+
+`https://javaee.github.io/javaee-spec/javadocs/javax/persistence/package-frame.html`
+`https://commons.apache.org/`
