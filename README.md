@@ -387,8 +387,8 @@ Code has been splitted for some subclasses as below.
         // org.bitbucket.javautils.test.classes.Game[name=Game 1,gameTag=game1,category=category 1][]
 
         // object printers
-        gameB.print();
-        gameB.deepPrint();
+        game.print();
+        game.deepPrint();
         
 6. Classes used in examples above
     
