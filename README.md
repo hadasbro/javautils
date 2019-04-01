@@ -26,7 +26,7 @@ Library contains some methods to
 4. Some additional methods, e.g. **Object Coalesce**, wrapper for **CompletionException**, **array element exists checker** and more
 
 
-![picture](/files/jutils.png)
+![picture](/files/jutils4.png)
 
 ---
 
