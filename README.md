@@ -64,28 +64,28 @@ Code has been splitted for some subclasses as below.
 
     a) CollectionUtils::collGroupper - group collection of objects by object's method value / by property
 
-    - signature
+    * signature
     
             <T extends EntityTag, S> Map<S, Set<T>> collGroupper<T extends EntityTag, S> Map<S, Set<T>> collGroupper(Collection<T> collection,Collector<? super T, ?, Map<S,Set<T>>> collector)
 
-	- usage 
+	* usage 
 	
             Map<String, Set<Game>> grouppedByCategory = CollectionUtils.collGroupper(
                     gamesCollection,
                     Game::getCategory
             );
             
-	- result
+	* result
 	
             {category 3=[Game{name='Game 4', gameTag='game4', category='category 3'}],category 2=[Game{name='Game 2', gameTag='game2', category='category 2'}],category 1=[Game{name='Game 1', gameTag='game1', category='category 1'},Game{name='Game 3', gameTag='game3', category='category 1'}]}
     
     b) CollectionUtils.collGroupperFlatter - group collection of objects by object's method value / by property and flat to object value / property
 
-    - signature
+    * signature
     
             <T extends EntityTag, S, R> Map<S, Set<R>> collGroupperFlatter(gamesCollection, Game::getCategory, Game::getName);
 
-	- usage 
+	* usage 
 	
             Map<String, Set<String>> gameNameByCategory = CollectionUtils.collGroupperFlatter(
                     gamesCollection,
@@ -93,17 +93,17 @@ Code has been splitted for some subclasses as below.
                     Game::getName
             );
             
-	- result
+	* result
 	
             {category 3=[Game 4], category 2=[Game 2], category 1=[Game 1, Game 3]}
     
     c) CollectionUtils.advancedTransFilter - collection's filter and transformer
 
-    - signature
+    * signature
     
             Collection<T> advancedTransFilter(Collection<S> collection, Predicate<S> filter,Function<S,T> transformer)
 
-	- usage 
+	* usage 
 	
             Collection<Game> gameListNewCategory = CollectionUtils.advancedTransFilter(
                     gamesCollection,
@@ -114,17 +114,17 @@ Code has been splitted for some subclasses as below.
                     }
             );
             
-	- result
+	* result
 	
              [Game{name='Game 1', gameTag='game1', category='New category'}, Game{name='Game 3', gameTag='game3', category='New category'}]
                      
     d) CollectionUtils::transformCollection - transform collection using multiple transformers
 
-    - signature
+    * signature
     
             <T> Collection<T> transformCollection(Collection<T> collection,UnaryOperator<T> ...transformers)
 
-	- usage 
+	* usage 
 	
             Collection<Game> transformedCollection = CollectionUtils.transformCollection(
                     gamesCollection,
@@ -142,62 +142,62 @@ Code has been splitted for some subclasses as below.
                     }
             );
             
-	- result
+	* result
 	
             [Game{name='GAME 1', gameTag='game1', category='New category'},Game{name='GAME 2', gameTag='game2', category='New category'},Game{name='GAME 3', gameTag='game3', category='New category'},Game{name='GAME 4', gameTag='game4', category='New category'}]
             
     e)  CollectionUtils.findAll - search all elements in collection by predicate
 
-    - signature
+    * signature
     
             <T> ArrayList<T> findAll(Collection<T> collection, Predicate<T> filter)
 
-	- usage 
+	* usage 
 	
             ArrayList<Game> gamesFromCategory1 = CollectionUtils.findAll(
                     gamesCollection, game -> game.getCategory().equals("New category")
             );
             
-	- result
+	* result
 	
             [Game{name='GAME 1', gameTag='game1', category='New category'},Game{name='GAME 2', gameTag='game2', category='New category'},Game{name='GAME 3', gameTag='game3', category='New category'},Game{name='GAME 4', gameTag='game4', category='New category'}]
                   
     f)  CollectionUtils.getRandomElement - get element by index or random if index is out of bound
 
-    - signature
+    * signature
     
             <T> T getRandomElement(List<T> list, int index)
 
-	- usage 
+	* usage 
 	
             Game randomGame = CollectionUtils.getRandomElement(gamesCollection, 5);
             
-	- result
+	* result
 	
             Game{name='GAME 2', gameTag='game2', category='New category'}
           
     g)  CollectionUtils::getFirstFromCollection - get first element from collection
 
-    - signature
+    * signature
     
             <E> E getFirstFromCollection(Collection<E> collection)
 
-	- usage 
+	* usage 
 	
              Game firstGame = CollectionUtils.getFirstFromCollection(gamesCollection);
             
-	- result
+	* result
 	
             Game{name='GAME 1', gameTag='game1', category='New category'}
           
     h)  CollectionUtils::objGenerateSet + CollectionUtils::objGenerate - generate Set/List of objects by supplier
 
-    - signature
+    * signature
     
             <T> Set<T> objGenerateSet(Integer n, Function<Integer, T> s)
             <T> ArrayList<T> objGenerate(Integer n, Function<Integer, T> s)
 
-	- usage 
+	* usage 
 	
 	        Set<Game> my5Games = CollectionUtils.objGenerateSet(
                     5, i -> new Game("Game " + i, "tag" + i, "category")
@@ -207,34 +207,34 @@ Code has been splitted for some subclasses as below.
                     5, i -> new Game("Game " + i, "tag" + i, "category")
             );
                  
-	- result
+	* result
 	
             [Game{name='Game 0', gameTag='tag0', category='category'},Game{name='Game 1', gameTag='tag1', category='category'}, Game{name='Game 2', gameTag='tag2', category='category'},Game{name='Game 3', gameTag='tag3', category='category'}, Game{name='Game 4', gameTag='tag4', category='category'}]
             [Game{name='Game 0', gameTag='tag0', category='category'},Game{name='Game 1', gameTag='tag1', category='category'},Game{name='Game 2', gameTag='tag2', category='category'},Game{name='Game 3', gameTag='tag3', category='category'},Game{name='Game 4', gameTag='tag4', category='category'}]
     
     i)  CollectionUtils::listsCombiner 
 
-    - signature
+    * signature
     
             <T> List<T> listsCombiner(List<? extends T>... lists)
 
-	- usage 
+	* usage 
 	
             List<Game> combinedList = CollectionUtils.listsCombiner(gamesCollection2, gamesCollection3, gamesCollection4);
      
-	- result
+	* result
 	
             [Game{name='GAME 1', gameTag='game1', category='New category'},Game{name='GAME 2', gameTag='game2', category='New category'},Game{name='GAME 3', gameTag='game3', category='New category'},Game{name='GAME 4', gameTag='game4', category='New category'}]
 
     j)  CollectionUtils::anyOkFromCollection, CollectionUtils::allNotOkFromCollection, CollectionUtils::allOkFromCollection
 
-    - signatures
+    * signatures
     
             <T> boolean allOkFromCollection(Collection<T> collection, Predicate<? super T> condition)
             <T> boolean allNotOkFromCollection(Collection<T> collection, Predicate<? super T> condition)
             <T> boolean anyOkFromCollection(Collection<T> collection, Predicate<? super T> condition)
 
-	- usage 
+	* usage 
 	
 	        boolean collectionContainsGameCategory1 = CollectionUtils.anyOkFromCollection(
                   gamesCollection2,
@@ -251,19 +251,19 @@ Code has been splitted for some subclasses as below.
                     game -> game.getCategory().equals("category 1")
             );
             
-	- result
+	* result
 	
              false, true, false
              
 2. **ObjectUtils** - operations on objects.
     a) ObjectUtils::convertPojoToDto - convert POJO - > DTO
 
-    - signatures
+    * signatures
     
             <T extends DtoObject, S extends EntityTag> T convertPojoToDto(Class<T> targetClass, S post)
             <T extends DtoObject, S extends EntityTag> List<T> convertPojoToDto(Class<T> targetClass, Collection<S> post)
 	
-	- usage 
+	* usage 
 	
             // single object conversion
             GameDto gameDtoResult = ObjectUtils.convertPojoToDto(GameDto.class, gameB);
@@ -275,22 +275,22 @@ Code has been splitted for some subclasses as below.
                 add(gameD);
             }});
                 
-	- result
+	* result
 	
              GameDto object ( GameDto{name='Game 1'} )
              GameDto objects ( [GameDto{name='Game 1'}, GameDto{name='Game 2'}, GameDto{name='Game 3'}] )
              
     b) ObjectUtils::convert - convert DTO -> POJO
 
-    - signature
+    * signature
     
             <T, S> T convert(Class<T> targetClass, S post)
 	
-	- usage 
+	* usage 
 	
             Game game = ObjectUtils.convert(Game.class, gameDtoResult);
                 
-	- result
+	* result
 	
              Game object ( Game{name='Game 1'} )
               
@@ -299,11 +299,11 @@ Code has been splitted for some subclasses as below.
 3. **ThreadUtils**  - multithread programming utils.
     a) ThreadUtils::excToCompletableExc - wrap CompletionException exceptions in CompletableFuture 
 
-    - signature
+    * signature
     
             CompletionException excToCompletableExc(Throwable tex)
 	
-	- usage 
+	* usage 
     	
             /*
              * wrap custom exception in completable future and throw
@@ -324,7 +324,7 @@ Code has been splitted for some subclasses as below.
     
             });
             
-	- result
+	* result
 	
             you can handle CustomException in .handle() method
 
