@@ -1,7 +1,8 @@
 ![picture](https://img.shields.io/badge/Java-11.0.1-brightgreen.svg)
 ![picture](https://img.shields.io/badge/Apache%20Commons-3.3.2-brightgreen.svg)
-![picture](https://img.shields.io/badge/junit-4.12-green.sv)
-g
+![picture](https://img.shields.io/badge/junit-4.12-green.svg)
+
+
 ** Java Utils - utility methods and classes for popular needs **
 
 Use this class if you need to do some operations on Java objects, collections, or if you need to generate objects etc.
