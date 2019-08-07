@@ -27,7 +27,7 @@ Library contains some methods to
 
 1. Handle **collections** of elements
 2. **Print and stringify** object of any kind.
-3. Some object utils e.g. POJO < - > DTO converter.
+3. ~~Some object utils e.g. POJO < - > DTO converter.~~
 4. Some additional methods, e.g. **Object Coalesce**, wrapper for **CompletionException**, **array element exists checker** and more
 
 
