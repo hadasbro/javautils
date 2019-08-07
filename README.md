@@ -304,7 +304,7 @@ List<Game> gamesCollection4 = new LinkedList<>(){{
         <T extends DtoObject, S extends EntityTag> List<T> convertPojoToDto(Class<T> targetClass, Collection<S> post)
         ```
         
-	* ~~usage ~~
+	* ~~usage~~
 	
         ```java
             // single object conversion
