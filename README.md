@@ -9,7 +9,7 @@ Use this class if you need to do some operations on Java objects, collections, o
 
 * ~~Uses Models Projector(https://github.com/glaures/modelprojector)~~ [removed in ver.1.0.2]
 
-* ~~Apache Commonts (https://commons.apache.org/)~~[removed in ver.1.0.2]
+* ~~Apache Commonts (https://commons.apache.org/)~~ [removed in ver.1.0.2]
 
 * jUnit (https://junit.org/)
 
