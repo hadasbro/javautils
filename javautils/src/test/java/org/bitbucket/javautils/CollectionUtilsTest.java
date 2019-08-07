@@ -54,7 +54,9 @@ public class CollectionUtilsTest {
         );
 
 
-        assertEquals(grouppedByCategory.toString(), "{category 3=[Game{name='Game 4', gameTag='game4', category='category 3'}], category 2=[Game{name='Game 2', gameTag='game2', category='category 2'}], category 1=[Game{name='Game 1', gameTag='game1', category='category 1'}, Game{name='Game 3', gameTag='game3', category='category 1'}]}");
+        assertEquals(grouppedByCategory.toString(), "{category 3=[Game{name='Game 4', gameTag='game4', category='category 3'}], " +
+                "category 2=[Game{name='Game 2', gameTag='game2', category='category 2'}], category 1=[Game{name='Game 1', " +
+                "gameTag='game1', category='category 1'}, Game{name='Game 3', gameTag='game3', category='category 1'}]}");
 
     }
 
@@ -83,7 +85,8 @@ public class CollectionUtilsTest {
                 }
         );
 
-        assertEquals(gameListNewCategory.toString(), "[Game{name='Game 1', gameTag='game1', category='New category'}, Game{name='Game 3', gameTag='game3', category='New category'}]");
+        assertEquals(gameListNewCategory.toString(), "[Game{name='Game 1', gameTag='game1', category='New category'}, " +
+                "Game{name='Game 3', gameTag='game3', category='New category'}]");
 
     }
 
@@ -108,7 +111,9 @@ public class CollectionUtilsTest {
 
         assertEquals(
                 transformedCollection.toString(),
-                "[Game{name='GAME 1', gameTag='game1', category='New category'}, Game{name='GAME 2', gameTag='game2', category='New category'}, Game{name='GAME 3', gameTag='game3', category='New category'}, Game{name='GAME 4', gameTag='game4', category='New category'}]"
+                "[Game{name='GAME 1', gameTag='game1', category='New category'}, Game{name='GAME 2', gameTag='game2', " +
+                        "category='New category'}, Game{name='GAME 3', gameTag='game3', category='New category'}, " +
+                        "Game{name='GAME 4', gameTag='game4', category='New category'}]"
         );
 
     }

@@ -26,7 +26,8 @@ public class UtilsTest {
     @Test
     public void coalesceTest() {
 
-        assertEquals(Utils.coalesce(gameA, userA, gameB, gameC).toString(), "Game{name='Game 1', gameTag='game1', category='category 1'}");
+        assertEquals(Utils.coalesce(gameA, userA, gameB, gameC).toString(), "Game{name='Game 1', gameTag='game1', " +
+                "category='category 1'}");
 
         assertEquals(Utils.coalesce(
                 () -> null,
@@ -49,6 +50,21 @@ public class UtilsTest {
         String strings[] = {"abc", "def", "ghi"};
         assertFalse(Utils.arrayInclude(strings, "defghi"));
         assertTrue(Utils.arrayInclude(strings, "def"));
+    }
+
+    @Test
+    public void stringifyTest(){
+
+        String gameStr1 = gameB.stringify();
+
+        assertEquals(gameStr1,"org.bitbucket.javautils.test.classes.Game[name=Game 1" +
+                ",gameTag=game1,category=category 1][]");
+
+        String gameStr2 =  gameD.deepStringify();
+
+        assertEquals(gameStr2,"org.bitbucket.javautils.test.classes.Game[name=Game 3," +
+                "gameTag=game3,category=category 1][]");
+
     }
 
 }

@@ -1,6 +1,5 @@
 package org.bitbucket.javautils;
 
-import org.apache.commons.lang3.builder.ToStringStyle;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -10,19 +9,6 @@ import java.util.*;
 @SuppressWarnings({"unused", "WeakerAccess"})
 final public class ObjectStringifer {
 
-    /**
-     * Object Printer Style
-     */
-    final public static class PrintToStringStyle extends ToStringStyle {
-        
-        public PrintToStringStyle() {
-            super();
-            this.setUseClassName(false);
-            this.setUseIdentityHashCode(false);
-            this.setUseFieldNames(true);
-        }
-
-    }
 
     /**
      * Deep Obj printer (via Reflection API)

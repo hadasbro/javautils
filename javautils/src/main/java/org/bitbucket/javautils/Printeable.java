@@ -1,7 +1,5 @@
 package org.bitbucket.javautils;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 /**
  * interface Printeable
  */
@@ -16,7 +14,7 @@ public interface Printeable {
      * @return String
      */
     default String stringify() {
-        return ToStringBuilder.reflectionToString(this, new ObjectStringifer.PrintToStringStyle());
+        return deepStringify();
     }
 
     /**
