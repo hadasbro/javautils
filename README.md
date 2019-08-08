@@ -1,6 +1,5 @@
-![picture](https://img.shields.io/badge/Java-11.0.1-brightgreen.svg)
-![picture](https://img.shields.io/badge/Apache%20Commons-3.3.2-brightgreen.svg)
-![picture](https://img.shields.io/badge/jUnit-4.12-brightgreen)
+![picture](https://img.shields.io/badge/Java-11.0.1-green)
+![picture](https://img.shields.io/badge/jUnit-4.12-green)
 
 
 **Java Utils - zero dependency library with useful utils**
