@@ -15,9 +15,15 @@ Use this class if you need to do some operations on Java objects, collections, o
 
 ---
 
-## Install
+## Installation
 
-Install from source.
+Install from Maven Central Repository.
+
+    <dependency>
+      <groupId>com.github.hadasbro</groupId>
+      <artifactId>javautils</artifactId>
+      <version>1.0.1</version>
+    </dependency>
 
 ---
 
