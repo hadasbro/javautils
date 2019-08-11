@@ -1,6 +1,7 @@
-![picture](https://img.shields.io/badge/Java-11.0.1-green)
+![picture](https://img.shields.io/badge/Maven%20central-1.0.1-green)
+![picture](https://img.shields.io/badge/Java-%3E%3D9.0.1-green)
 ![picture](https://img.shields.io/badge/jUnit-4.12-green)
-
+![picture](https://img.shields.io/badge/License-Apache--2.0-%23008EFF)
 
 **Java Utils - zero dependency library with useful utils**
 
