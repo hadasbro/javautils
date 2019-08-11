@@ -56,10 +56,10 @@ public class GeneralTest {
 
         assertTrue(Utils.arrayInclude(strings, "def"));
 
-        assertEquals(gameB.stringify(), "Game" +
+        assertEquals(gameB.stringify(), "com.github.hadasbro.javautils.test.classes.Game" +
                 "[name=Game 1,gameTag=game1,category=category 1][]");
 
-        assertEquals(gameB.deepStringify(), "Game" +
+        assertEquals(gameB.deepStringify(), "com.github.hadasbro.javautils.test.classes.Game" +
                 "[name=Game 1,gameTag=game1,category=category 1][]");
 
     }
