@@ -462,5 +462,9 @@ List<Game> gamesCollection4 = new LinkedList<>(){{
     
     see source code, package test.classes
     
-    
+   
+---
 
+## Authors
+
+* **Slawomir Hadas** - *author* - [Github](https://github.com/hadasbro)
